@@ -1,11 +1,18 @@
 // tailwind
 @import url('https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css');
-// font
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&Ubuntu:ital,wght@1,400&display=swap');
 
-// component
-@import './components/header.scss';
-@import './components/hero.scss';
+// font
+// // noto sans
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap');
+
+// // mimmoji : 読み込み速度の問題で一旦コメント
+// @font-face {
+//   font-family: minmoji;
+//   src: url('https://minmoji.ucda.jp/fontseot/https%3A__newcreator.org');
+//   src: local('minmoji'),
+//     url('https://minmoji.ucda.jp/fontswoff/https%3A__newcreator.org') format('woff'),
+//     url('https://minmoji.ucda.jp/fonts/https%3A__newcreator.org') format('opentype');
+// }
 
 
 // global
@@ -13,8 +20,9 @@ body {
   margin: 0;
   background-color: #FFF;
   font-family:
+    // minmoji,
+    // 'minmoji',
     'Noto Sans JP',
-    Ubuntu,
     -apple-system,
     BlinkMacSystemFont,
     "Segoe UI",
