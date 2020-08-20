@@ -1,0 +1,43 @@
+{
+  "name": "newcreator.net",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/js/index.js",
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/newcreator-org/newcreator.net.git"
+  },
+  "author": "newcreator-org",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/newcreator-org/newcreator.net-2020/issues"
+  },
+  "homepage": "https://github.com/newcreator-org/newcreator.net#readme",
+  "devDependencies": {
+    "@babel/cli": "7.10.5",
+    "@babel/core": "7.11.1",
+    "@babel/preset-env": "7.11.0",
+    "@babel/register": "7.10.5",
+    "babel-loader": "8.1.0",
+    "browser-sync": "2.26.12",
+    "gulp": "4.0.2",
+    "gulp-autoprefixer": "7.0.1",
+    "gulp-babel": "8.0.0",
+    "gulp-postcss": "8.0.0",
+    "gulp-rename": "2.0.0",
+    "gulp-sass": "4.1.0",
+    "gulp-uglify": "3.0.2",
+    "postcss-cssnext": "3.1.0"
+  },
+  "eslintConfig": {
+    "extends": "airbnb",
+    "env": {
+      "browser": true,
+      "node": true
+    }
+  }
+}

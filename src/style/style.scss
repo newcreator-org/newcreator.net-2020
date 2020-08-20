@@ -1,0 +1,26 @@
+// tailwind
+@import url('https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css');
+// font
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&Ubuntu:ital,wght@1,400&display=swap');
+
+// component
+@import './components/header.scss';
+@import './components/hero.scss';
+
+
+// global
+body {
+  margin: 0;
+  background-color: #FFF;
+  font-family:
+    'Noto Sans JP',
+    Ubuntu,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen-Sans,
+    Cantarell,
+    "Helvetica Neue",
+    sans-serif;
+}

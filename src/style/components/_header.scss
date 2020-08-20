@@ -1,0 +1,43 @@
+.header {
+  &__logo {
+    background-image: url(../../img/logo-black.svg);
+    height: 30px;
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: contain;
+    color: transparent;
+    margin: 0;
+    font-size: 30px;
+  }
+
+  &__nav {
+    width: 75%;
+    height: 30px;
+    margin: 40px auto 40px auto;
+    background-color: white;
+    /* border: solid thin black; */
+    border-radius: 30px;
+    padding: 15px 30px 15px 40px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    box-shadow: 0 0 4px #a9a9a9;
+    box-sizing: content-box;
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+
+@media screen and (max-width: 980px) {
+  .header__nav {
+    width: calc(100% - 140px);
+    margin: 40px auto 40px auto;
+  }
+}
