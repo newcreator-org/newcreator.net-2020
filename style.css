@@ -1,0 +1,25 @@
+/* 
+Theme Name: newcreator.net-2020
+Theme URL: https://newcreator.net/
+Description: This is a theme of wordpress for newcreator.net.
+Version: 0.1
+Author: newcreator.org, Kosho Asaga, Yoshihisa Kaino
+ */
+/* DO NOT EDIT CSS FILE */
+/* PLEASE EDIT "SCSS" FILE */
+@import url("https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap");
+body {
+  margin: 0;
+  background-color: #FFF;
+  font-family: 'Noto Sans JP',
+ -apple-system,
+ BlinkMacSystemFont,
+ "Segoe UI",
+ Roboto,
+ Oxygen-Sans,
+ Cantarell,
+ "Helvetica Neue",
+ sans-serif;
+}
+/*# sourceMappingURL=style.css.map */
