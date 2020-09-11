@@ -36,12 +36,23 @@
           </svg> -->
           <span class="ml-3 text-xl">newCreator.net</span>
         </a>
-        <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+        <?php
+          wp_nav_menu( array( 
+            'theme_location' => 'header-menu',
+            'container' => 'nav',
+            'container_class' => 'md:ml-auto flex flex-wrap items-center text-base justify-center',
+            'menu_class'=> 'md:ml-auto flex flex-wrap items-center text-base justify-center',
+            'item_class' => 'mr-5 hover:text-gray-900',
+            'depth' => 0,
+            'wrap' => ''
+          ) ); 
+        ?>
+        <!-- <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
           <a class="mr-5 hover:text-gray-900">リンク1</a>
           <a class="mr-5 hover:text-gray-900">リンク2</a>
           <a class="mr-5 hover:text-gray-900">リンク3</a>
           <a class="mr-5 hover:text-gray-900">リンク4</a>
-        </nav>
+        </nav> -->
         <!-- <button
           class="inline-flex items-center bg-gray-200 border-0 py-1 px-3 focus:outline-none hover:bg-gray-300 rounded text-base mt-4 md:mt-0">Button
           <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
