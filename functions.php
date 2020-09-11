@@ -38,3 +38,11 @@ function create_custom_menus() {
   ));
 }
 add_action('init','create_custom_menus');
+
+function add_item_class($classes, $item, $args) {
+  if(isset($args->item_class)) {
+      $classes[] = $args->item_class;
+  }
+  return $classes;
+}
+add_filter('nav_menu_css_class', 'add_item_class', 1, 3);
