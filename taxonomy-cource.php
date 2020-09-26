@@ -61,7 +61,7 @@
                   foreach($units as $unit):
                     // var_dump($unit);
                 ?>
-                <a class="mb-2">
+                <a class="mb-2 modal-open" id="modal-open-<?=$unit->slug?>" onClick="toggleModal('<?=$unit->slug?>')">
                   <span
                     class="bg-blue-100 text-blue-500 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center">
                     <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -70,6 +70,60 @@
                     </svg>
                   </span><?=$unit->name?>
                 </a>
+                <!--Modal-->
+                <div class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center" id="modal-<?=$unit->slug?>">
+                  <div class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"></div>
+
+                  <div class="modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto">
+
+                    <div
+                      class="modal-close absolute top-0 right-0 cursor-pointer flex flex-col items-center mt-4 mr-4 text-white text-sm z-50">
+                      <svg class="fill-current text-white" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                        viewBox="0 0 18 18">
+                        <path
+                          d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z">
+                        </path>
+                      </svg>
+                      <span class="text-sm">(Esc)</span>
+                    </div>
+
+                    <!-- Add margin if you want to see some of the overlay behind the modal-->
+                    <div class="modal-content py-4 text-left px-6">
+                      <!--Title-->
+                      <div class="flex justify-between items-center pb-3">
+                        <p class="text-2xl font-bold"><?=$unit->name?></p>
+                        <div class="modal-close cursor-pointer z-50">
+                          <svg class="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                            viewBox="0 0 18 18">
+                            <path
+                              d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z">
+                            </path>
+                          </svg>
+                        </div>
+                      </div>
+
+                      <!--Body-->
+                      <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1">
+                        <a class="mb-2">
+                          <span class="bg-blue-100 text-blue-500 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center">
+                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                              class="w-3 h-3" viewBox="0 0 24 24">
+                              <path d="M20 6L9 17l-5-5"></path>
+                            </svg>
+                          </span>First Link
+                        </a>
+                        
+                      </nav>
+                      <!--Footer-->
+                      <div class="flex justify-end pt-2">
+                        <!-- <button
+                          class="px-4 bg-transparent p-3 rounded-lg text-indigo-500 hover:bg-gray-100 hover:text-indigo-400 mr-2">Action</button> -->
+                        <button class="modal-close px-4 bg-indigo-500 p-3 rounded-lg text-white hover:bg-indigo-400">とじる</button>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
                 <?php
                   endforeach;
                   else :
@@ -84,5 +138,49 @@
             <?php endforeach;?>
 
 
+
+    <script>
+      
+
+      const overlay = document.querySelector('.modal-overlay')
+      overlay.addEventListener('click', function(event){toggleModal("close")})
+
+      var closemodal = document.querySelectorAll('.modal-close')
+      for (var i = 0; i < closemodal.length; i++) {
+        closemodal[i].addEventListener('click', function(event){toggleModal("close")})
+      }
+
+      document.onkeydown = function (evt) {
+        evt = evt || window.event
+        var isEscape = false
+        if ("key" in evt) {
+          isEscape = (evt.key === "Escape" || evt.key === "Esc")
+        } else {
+          isEscape = (evt.keyCode === 27)
+        }
+        if (isEscape && document.body.classList.contains('modal-active')) {
+          toggleModal("close")
+        }
+      };
+
+
+      function toggleModal(slug) {
+        const body = document.querySelector('body')
+        if(slug!=="close") {
+          var modal = document.querySelector('#modal-'+slug)
+          openedModalId = '#modal-'+slug
+          
+        }else {
+          var modal = document.querySelector(openedModalId)
+        }
+        
+        modal.classList.toggle('opacity-0')
+        modal.classList.toggle('pointer-events-none')
+        body.classList.toggle('modal-active')
+        console.log(openedModalId)
+      }
+
+
+    </script>
     </main>
     <?php get_footer(); ?>
